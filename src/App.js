@@ -15,24 +15,30 @@ class App extends Component {
     this.setState({projects: [
       {
         company: "Idean",
-        title: "Intern"
+        category: "Intern"
       },
       {
-        company: "Idean",
-        title: "UI Developer"
+        company: "Capgemini",
+        category: "UI Developer"
       },
       {
         company: "IBM",
-        title: "Developer"
+        category: "Developer"
       }
     ]});
+  }
+
+  handleAddProject(project) {
+    let projects = this.state.projects;
+    projects.push(project);
+    this.setState({projects: projects});
   }
 
 
   render() {
     return (
       <div className="App">
-        <AddProject />
+        <AddProject addProject={this.handleAddProject.bind(this)} />
 
         <Projects projects={this.state.projects} />
       </div>
