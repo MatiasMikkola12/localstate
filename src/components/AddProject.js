@@ -5,7 +5,7 @@ class AddProject extends Component {
     constructor() {
         super();
         this.state = {
-            newPropject: {}
+            newProject: {}
         }
     }
 
